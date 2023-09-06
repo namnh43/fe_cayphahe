@@ -1,0 +1,6 @@
+.card-container {
+    transition: transform 0.2s ease;
+}
+.card-container:hover {
+    transform: scale(1.08);
+}
