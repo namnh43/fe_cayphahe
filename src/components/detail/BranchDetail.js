@@ -2,7 +2,7 @@ import {useParams} from "react-router";
 import {useEffect, useState} from "react";
 import CONSTANTS from "../../utils/CONSTANTS";
 import {fetchData} from "../../utils/Utils";
-import {Table} from "react-bootstrap";
+import {Col, Container, Row, Table} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import {BreadcrumbComponent} from "../nav/BreadcrumbComponent";
 
@@ -41,7 +41,22 @@ export function BranchDetail() {
     return (
         <>
             <BreadcrumbComponent items={breadcrumbItems}/>
-            <h1>Danh sách đinh của {branch.name}</h1>
+            <h3>Thông tin</h3>
+            <Container>
+                <Row className='text-start align-items-start justify-content-center'>
+                    <Col xs={2}><h6>Tên chi:</h6></Col>
+                    <Col >{branch? branch.name: ''}</Col>
+                </Row>
+                <Row>
+                    <Col xs={2}><h6>Số lượng đinh:</h6></Col>
+                    <Col >{list.length}</Col>
+                </Row>
+                <Row>
+                    <Col xs={2}><h6>Trưởng chi:</h6></Col>
+                    <Col ><Link to= {branch ? `/people/${branch.ref.id}` : '/'}>{branch ? branch.ref.name : ''}</Link></Col>
+                </Row>
+            </Container>
+            <h3>Danh sách đinh của {branch.name}</h3>
             <Table striped bordered hover>
                 <thead>
                 <tr>

@@ -8,7 +8,7 @@ export function BranchCard({ava,title,text,refDetail,id}) {
     return (
         <Card
 
-            style={{ width: '22rem' }}
+            style={{ width: '19rem' }}
             className="card-container">
             <Card.Img variant="top" src={ava?ava:"https://mui.com/static/images/cards/contemplative-reptile.jpg"} />
             <Card.Body>
